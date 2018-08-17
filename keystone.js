@@ -6,9 +6,7 @@ require('dotenv').config();
 var keystone = require('keystone');
 var handlebars = require('express-handlebars');
 var mongoClient = require("mongodb").MongoClient;
-mongoClient.connect("mongodb://smsrums:rlFW3DvS9R3jPveauZjSWNgThVfqqnIwSQISXZib9mMek861CHvn9nC3pmIvh5Yqf9VQyfp7zovJ86TJJvclMQ==@smsrums.documents.azure.com:10255/?ssl=true", function (err, db) {
-  db.close();
-});
+
 // Initialise Keystone with your project's configuration.
 // See http://keystonejs.com/guide/config for available options
 // and documentation.
@@ -77,5 +75,8 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	+ '\nset up your mailgun integration');
 }
 
+mongoClient.connect("mongodb://smsrums:rlFW3DvS9R3jPveauZjSWNgThVfqqnIwSQISXZib9mMek861CHvn9nC3pmIvh5Yqf9VQyfp7zovJ86TJJvclMQ==@smsrums.documents.azure.com:10255/?ssl=true", function (err, db) {
+  db.close();
+});
 
 keystone.start();
