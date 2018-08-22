@@ -75,8 +75,4 @@ if (!process.env.MAILGUN_API_KEY || !process.env.MAILGUN_DOMAIN) {
 	+ '\nset up your mailgun integration');
 }
 
-mongoClient.connect("mongodb://smsrums:rlFW3DvS9R3jPveauZjSWNgThVfqqnIwSQISXZib9mMek861CHvn9nC3pmIvh5Yqf9VQyfp7zovJ86TJJvclMQ==@smsrums.documents.azure.com:10255/?ssl=true", function (err, db) {
-  db.close();
-});
-
 keystone.start();
